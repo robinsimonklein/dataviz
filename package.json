@@ -1,0 +1,19 @@
+{
+  "name": "dataviz",
+  "version": "1.0.0",
+  "description": "Dataviz first tests",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/robinsimonklein/dataviz.git"
+  },
+  "author": "Robin Simonklein",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/robinsimonklein/dataviz/issues"
+  },
+  "homepage": "https://github.com/robinsimonklein/dataviz#readme"
+}
