@@ -1,0 +1,22 @@
+// Reset
+
+
+// Helpers
+
+// Tools
+@import "tools/_variables";
+@import "tools/_animations";
+
+// Components
+
+@import "components/_worldmap";
+
+
+
+body{
+  background-image: url('../images/fond_1.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 100vh;
+}

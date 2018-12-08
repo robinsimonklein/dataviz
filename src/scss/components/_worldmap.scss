@@ -1,0 +1,58 @@
+.worldMap_container{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+
+  transform: translate3d(-50%, -50%, 0);
+  max-width:100%;
+  width: 100vmin;
+  height: 100vmin;
+
+  display:flex;
+  flex-direction: column;
+  justify-content: center;
+
+
+
+  .land{
+    fill: rgba($color_ui_5, 0.8);
+
+    stroke: #cfcfcf;
+
+  }
+  .bubble{
+    //fill: rgba($color_ui_4, 0.6);
+    stroke: rgba($color_ui_4, 0.4);
+
+    //stroke-width: 20;
+    transition: all 0.2s ease;
+
+    &#makay{
+      animation-name: animatedBubble;
+      animation-duration: 3s;
+      animation-iteration-count: infinite;
+      animation-timing-function: ease;
+
+      &:hover{
+
+        cursor: pointer;
+      }
+    }
+
+    &:after{
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 0;
+      height: 40px;
+      width: 20px;
+
+    }
+    &:hover{
+      stroke-width: 0;
+      transform: scale(1.4);
+      transition: all 0.3s ease;
+    }
+  }
+
+}

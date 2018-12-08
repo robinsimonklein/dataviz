@@ -1,0 +1,14 @@
+@keyframes animatedBubble {
+  0%{
+    stroke-opacity: 1;
+    stroke-width: 0;
+  }
+  50%{
+    stroke-opacity: 0;
+    stroke-width: 40;
+  }
+  100%{
+    stroke-opacity: 0;
+    stroke-width: 40;
+  }
+}
