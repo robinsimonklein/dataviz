@@ -12,12 +12,19 @@
   flex-direction: column;
   justify-content: center;
 
+  svg{
+    &.test{
+      transform: scale3d(2, 2, 1);
+      transition: transform 0.5s ease;
+      transform-origin: 606px 518px;
+    }
+  }
 
 
   .land{
-    fill: rgba($color_ui_5, 0.8);
+    fill: $color_ui_5;
 
-    stroke: #cfcfcf;
+    stroke: #777;
 
   }
   .bubble{
@@ -49,7 +56,7 @@
 
     }
     &:hover{
-      stroke-width: 0;
+      stroke-width: 15;
       transform: scale(1.4);
       transition: all 0.3s ease;
     }

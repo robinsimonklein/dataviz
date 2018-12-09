@@ -1,0 +1,47 @@
+#cursorBox{
+  position: fixed;
+
+  visibility:hidden;
+  background-color: rgba(white, 1);
+  transform: scale(0.8);
+  padding: 20px 25px;
+
+  z-index: 900;
+  max-width: 250px;
+
+
+  transition: visibility 0s 0s, transform 0.3s ease;
+  &.visible{
+    visibility: visible;
+    transform: scale(1);
+    transition: visibility 0s 0s, transform 0.3s ease;
+  }
+
+
+  .title{
+    font-family: 'Lora', serif;
+    font-size: 30px;
+    font-weight: normal;
+    color: $color_ui_4;
+
+    opacity: 0.9;
+    transform: scale(0.9);
+  }
+  .desc{
+    color: $color_ui_5;
+    hyphens: none;
+    font-size: 15px;
+
+  }
+  .note{
+    font-size: 15px;
+  }
+  hr{
+    width: 30px;
+    height: 1px;
+    border: none;
+    background-color: $color_ui_5;
+    opacity: 0.2;
+    margin-left: 0;
+  }
+}

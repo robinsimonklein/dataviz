@@ -6,17 +6,34 @@
 // Tools
 @import "tools/_variables";
 @import "tools/_animations";
+@import "tools/_text";
 
 // Components
 
 @import "components/_worldmap";
+@import "components/_cursorBox";
 
 
 
 body{
-  background-image: url('../images/fond_1.jpg');
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
+  margin: 0;
   height: 100vh;
+  width: 100vw;
+  overflow: hidden;
+
+  font-family: 'Lato', Arial, sans-serif;
+
+  background: -moz-radial-gradient(center, ellipse cover, rgba(247,230,212,0) 0%, rgba(247,230,212,1) 100%);
+  background: -webkit-radial-gradient(center, ellipse cover, rgba(247,230,212,0) 0%,rgba(247,230,212,1) 100%);
+  background: radial-gradient(ellipse at center, rgba(247,230,212,0) 0%,rgba(247,230,212,1) 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00f7e6d4', endColorstr='#f7e6d4',GradientType=1 );
+
+  //background-image: url('images/fond_2.jpg');
+  //background-repeat: no-repeat;
+  //background-position: center;
+  //background-size: cover;
+}
+
+#frame_world-map{
+  display: none;
 }
