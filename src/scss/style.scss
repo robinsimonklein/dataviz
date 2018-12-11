@@ -12,6 +12,7 @@
 // Components
 
 @import "components/_worldmap";
+@import "components/_makaymap";
 @import "components/_cursorBox";
 @import "components/_frame";
 
@@ -24,7 +25,7 @@ body{
   overflow: hidden;
   -webkit-backface-visibility: hidden;
 
-  font-family: 'Lato', Arial, sans-serif;
+  font-family: 'Lora', serif;
   background-color: black;
 
   //background: -moz-radial-gradient(center, ellipse cover, rgba(247,230,212,0) 0%, rgba(247,230,212,1) 100%);

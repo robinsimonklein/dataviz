@@ -1,0 +1,13 @@
+
+#makaymap{
+  height: 100%;
+  z-index:2;
+
+  .camp{
+    fill: $color_ui_4;
+
+    &:hover{
+      cursor: pointer;
+    }
+  }
+}
