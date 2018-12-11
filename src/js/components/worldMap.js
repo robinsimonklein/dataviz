@@ -73,6 +73,7 @@ const worldMap = {
     addPoint(point){
         let newPoint = new LostWorld(point.id, point.name, point.coords, point.size, point.desc);
         newPoint.draw();
+        this.lostWorldsObjects[point.id] = newPoint;
         this.el.append(newPoint.el);
     },
     zoomIn(){
@@ -114,7 +115,6 @@ class LostWorld{
         });
     }
 }
-
 
 
 export {worldMap};

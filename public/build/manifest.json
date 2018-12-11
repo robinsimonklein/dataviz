@@ -1,9 +1,8 @@
 {
+  "build/0.js": "/build/0.js",
   "build/app.css": "/build/app.css",
   "build/app.js": "/build/app.js",
   "build/runtime.js": "/build/runtime.js",
-  "build/0.js": "/build/0.js",
-  "build/images/fond_1.jpg": "/build/images/fond_1.jpg",
-  "build/images/fond_1.png": "/build/images/fond_1.png",
-  "build/images/fond_2.jpg": "/build/images/fond_2.jpg"
+  "build/images/fond_2.jpg": "/build/images/fond_2.jpg",
+  "build/images/text-slide_2_color_1.png": "/build/images/text-slide_2_color_1.png"
 }

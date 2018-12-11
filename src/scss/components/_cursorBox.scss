@@ -23,9 +23,27 @@
     font-size: 30px;
     font-weight: normal;
     color: $color_ui_4;
+    margin: 0;
+    padding: 0;
+    text-align: left;
 
-    opacity: 0.9;
-    transform: scale(0.9);
+  }
+  .land{
+    position: relative;
+    padding-left: 40px;
+    opacity: 0.4;
+    &:before{
+      content: '';
+      position: absolute;
+      top: 50%;
+      left: 0;
+
+      height: 1px;
+      width: 30px;
+      background-color: $color_ui_5;
+      display: inline;
+
+    }
   }
   .desc{
     color: $color_ui_5;

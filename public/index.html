@@ -7,21 +7,93 @@
     </head>
     <body>
     <div id="cursorBox">
-        <span class="title"></span>
-        <hr/>
+        <h2 class="title"></h2>
+        <span class="land">Madagascar</span>
         <p class="desc"></p>
         <span class="note"></span>
     </div>
 
-    <section class="frame" id="intro">
-        <div class="intro_wrap">
-            <h1>MAKAY</h1>
-            <button class="border-btn">Commencer l'expédition</button>
+    <section id="text-slide_template" class="frame text-slide text-slide_right template">
+        <div class="frame_bg">
+            <img class="frame_bg_img" src="images/EWEXMKA0677.jpg"/>
+        </div>
+
+        <div class="frame_content">
+            <div class="filter"></div>
+            <div class="text-slide_texture">
+                <img class="text-slide_texture_img" src="images/textures/text-slide/text-slide_2_color_1.png"/>
+            </div>
+
+            <div class="text-slide_text_wrap">
+
+                <div class="text-slide_text">
+                    <h2></h2>
+                    <span></span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="frame" id="frame_intro">
+        <div class="frame_bg">
+            <img class="frame_bg_img" src="images/backgrounds/intro_bg.jpg"/>
+        </div>
+        <div class="frame_content_text">
+            <div class="intro_wrap">
+                <h1>MAKAY</h1>
+                <button class="btn border-btn" id="toFrame2">Commencer l'expédition</button>
+            </div>
         </div>
 
     </section>
 
-    <section class="frame" id="frame_world-map">
+    <section class="frame gradient-bg" id="frame_makay-map">
+        <div class="frame_bg">
+            <img class="frame_bg_img" src="images/backgrounds/camp_1_bg.jpg"/>
+        </div>
+        <div class="frame_content">
+            <div class="filter filter-2"></div>
+            <div class="frame_makay-map_container">
+                <div class="svg-container makay-map_wrap">
+                    <div class="makay-map_texture">
+                        <img src="images/textures/makay-map_texture_bg.png" />
+                    </div>
+                    <svg version="1.1" id="makaymap" fill="url(#makaypattern)" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 233 461.7" xml:space="preserve" preserveAspectRatio="xMinYMin meet">
+                 <defs>
+                    <pattern id="makaypattern" x="0" y="0" width="1" height="1">
+                        <image width="330" height="654"
+                               xlink:href="images/textures/makay-map_texture.png"/>
+                    </pattern>
+                </defs>
+                <polygon points="175.3,0.7 182,0 190.8,0.7 205.3,14 217.3,28.2 218.6,31.7 218.6,34 219.7,35.4 221.7,50.9 223.1,68.3 223.9,74.7
+                    224.5,85.8 225.8,86.7 226.7,88.5 227.4,98 226.7,103.3 223.5,108.4 223,118.7 223.5,125 222.6,142 222.4,146.4 223.7,148.4
+                    226.6,145.5 233,150.1 232.6,151.1 228.8,152.7 225.1,159.3 223.9,167.9 223.8,173 225.7,176.4 224.6,178.7 227,182 227.7,187.8
+                    226.1,190.8 225,194.5 224.4,203.9 218.2,213.3 217.4,217.7 216.3,231.1 215.7,233.3 217,235.5 213.9,240.5 206.8,252.4
+                    195.7,265.5 189.7,271.8 185.4,278.8 176,283.3 169.5,285.3 166.1,286.8 159.7,298.9 157.1,297.6 155,292.9 149.2,294.6
+                    146.6,294.6 143.8,292.9 126.7,300.4 119.4,300.1 114.2,307.1 111.6,312.1 108.7,314.2 107.6,317.8 103.3,318.6 100.9,318.1
+                    97.7,320.4 98.2,325.7 97,326.4 99.6,331.6 100.2,333.2 100.7,335.4 100.3,338.3 97,344 98.3,344.7 96.4,346.7 96.4,349.8
+                    91.2,356.9 90.6,359.6 91,367.6 90.1,369.4 89.5,371 90.6,375.2 87.9,387.8 86.4,389.3 83,393.9 79.8,405.1 79.5,411.4 79.5,413.9
+                    78.7,415.9 78.7,419.2 77.3,420.8 74.6,421.6 68.4,419.4 64.9,417 60.1,416.4 57.6,418.6 58,423.2 57.1,425.5 56.1,427.3
+                    54.7,430.9 48,435.4 42.4,440.6 39.1,442.4 34.7,443.2 32.5,445.9 32,447.8 30.2,449.3 28.7,451 28,454.3 24.1,455 20.5,453.1
+                    16.6,453.9 8.7,459.6 2.9,461.7 1.8,460.7 0.5,458.7 0,454.7 2.4,437.8 1,435.4 1.5,434 5,434.8 7.3,432.6 6.4,429.9 6.5,428.6
+                    9.1,428.7 10.2,428 7,422.6 7.8,421.2 10.9,418 9.2,408.8 9.6,407.2 11.7,403.7 10,400.5 13.3,394.7 12.3,391.4 15.5,380.6
+                    22.5,372.8 20.9,370.6 23.8,365.5 25.5,362.2 28.7,362.9 32.1,362.9 34.2,361.6 37.3,362.4 41.4,363.1 44.6,362.9 49.2,356.8
+                    49.1,354.4 51.5,350 51.1,347.2 51.5,346.5 54.8,347.6 55.9,347.3 57.3,343.7 54.3,342.6 53.2,340.1 54.5,338.7 58.4,338.2
+                    58.4,335.7 54.8,333.5 55.2,327.7 54.3,322.8 50.7,315.2 51.6,314 50.8,307.7 52.1,303.8 52.1,299.8 53,298.1 53.7,295.9
+                    53.6,293.8 55.8,291.4 59,289.1 58.6,287.2 58.9,284.5 60.8,281.9 64.1,281 66.9,280.3 68.1,278 72.4,275.9 74.4,273.3 77.6,272.7
+                    81.4,273 82,271.5 81.9,267.5 86.9,261.4 91.1,257.1 90.2,252.4 86.7,248.9 83.4,248.9 80.5,246.9 76.5,246.9 71.1,242.9
+                    68.4,238.4 67.5,230.9 67.1,226.5 65.4,223 61.5,219.4 60.5,213.6 63.7,209.6 76.9,201 81.4,196.8 85.7,192.6 90.1,185.4
+                    94.8,179.4 103.6,171.3 107.8,162.6 112.5,158.6 115.5,144.8 118.7,139.5 128.1,130.3 131.7,126.4 132.2,121.8 136,117.7
+                    137.7,111.8 138.1,105.7 140.2,103.3 143.4,100.5 147.8,94.7 150.6,93 156.9,91.5 161.4,90.5 167.9,90.5 170.2,90.3 175.2,86.9
+                    181.7,86.4 182.4,85.1 181.3,82.7 182.5,81.4 180.6,77.9 165.5,60.4 163.5,56.4 163,49.7 160,28.3 160.7,24.3 160.1,18.6
+                    161.4,14.6 171.7,3.4 "/>
+                </svg>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="frame gradient-bg" id="frame_world-map">
         <div class="svg_container worldMap_container">
             <svg id="worldmap" xmlns="http://www.w3.org/2000/svg" xmlns:amcharts="http://amcharts.com/ammap" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" viewBox="0 0 1010 651" preserveAspectRatio="xMinYMax meet">
             <defs>

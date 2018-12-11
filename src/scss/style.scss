@@ -7,11 +7,13 @@
 @import "tools/_variables";
 @import "tools/_animations";
 @import "tools/_text";
+@import "tools/_ui";
 
 // Components
 
 @import "components/_worldmap";
 @import "components/_cursorBox";
+@import "components/_frame";
 
 
 
@@ -20,13 +22,15 @@ body{
   height: 100vh;
   width: 100vw;
   overflow: hidden;
+  -webkit-backface-visibility: hidden;
 
   font-family: 'Lato', Arial, sans-serif;
+  background-color: black;
 
-  background: -moz-radial-gradient(center, ellipse cover, rgba(247,230,212,0) 0%, rgba(247,230,212,1) 100%);
-  background: -webkit-radial-gradient(center, ellipse cover, rgba(247,230,212,0) 0%,rgba(247,230,212,1) 100%);
-  background: radial-gradient(ellipse at center, rgba(247,230,212,0) 0%,rgba(247,230,212,1) 100%);
-  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00f7e6d4', endColorstr='#f7e6d4',GradientType=1 );
+  //background: -moz-radial-gradient(center, ellipse cover, rgba(247,230,212,0) 0%, rgba(247,230,212,1) 100%);
+  //background: -webkit-radial-gradient(center, ellipse cover, rgba(247,230,212,0) 0%,rgba(247,230,212,1) 100%);
+  //background: radial-gradient(ellipse at center, rgba(247,230,212,0) 0%,rgba(247,230,212,1) 100%);
+  //filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00f7e6d4', endColorstr='#f7e6d4',GradientType=1 );
 
   //background-image: url('images/fond_2.jpg');
   //background-repeat: no-repeat;
@@ -34,6 +38,17 @@ body{
   //background-size: cover;
 }
 
-#frame_world-map{
+.template{
   display: none;
+}
+.gradient-bg{
+
+  background: -moz-radial-gradient(center, ellipse cover, #FFFDFD 0%, #f7e6d4 100%);
+  background: -webkit-radial-gradient(center, ellipse cover, #FFFDFD 0%,#f7e6d4 100%);
+  background: radial-gradient(ellipse at center, #FFFDFD 0%, #f7e6d4 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#FFFDFD', endColorstr='#f7e6d4',GradientType=1 );
+}
+
+svg, .svg-container{
+  backface-visibility: hidden;
 }

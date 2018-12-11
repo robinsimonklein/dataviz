@@ -1,5 +1,5 @@
 // Fonts
-@import url('https://fonts.googleapis.com/css?family=Lato:400,900|Lora:400,700');
+@import url('https://fonts.googleapis.com/css?family=Lato:400,700,900|Lora:400,700');
 
 
 // Colors
@@ -9,3 +9,10 @@ $color_ui_2 : #71AF27;
 $color_ui_3 : #EBA116;
 $color_ui_4 : #FF6608;
 $color_ui_5 : #3F2920;
+
+
+// Beziers
+
+$bezier_ease-in: cubic-bezier(.6,0,1,1);
+$bezier_ease-out: cubic-bezier(0,0,.3,1);
+$bezier_ease-in-out: cubic-bezier(.6,0,.3,1);
