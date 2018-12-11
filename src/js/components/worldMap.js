@@ -79,7 +79,7 @@ const worldMap = {
     zoomIn(){
         let vWidth = this.el.innerWidth;
         let vHeight = this.el.innerHeight;
-        this.el.setAttribute('style', 'transform: scale('+2+'); transform-origin: '+this.zoom.x+'px '+this.zoom.y+'px 0px')
+        this.el.setAttribute('style', 'transform: scale('+2+'); transform-origin: '+this.zoom.x+'px '+this.zoom.y+'px 0px');
     }
 };
 

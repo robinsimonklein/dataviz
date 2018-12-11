@@ -2,15 +2,23 @@
 import TweenMax from "gsap/TweenMax";
 import TimelineMax from "gsap/TimelineMax";
 import {worldMap} from './components/worldMap';
+import {makayMap} from "./components/makayMap";
 import cursorBox from './components/cursorBox';
 import {textSlidesAll, framesAll} from './components/frames';
-import {campsAll} from "./components/makayMap";
 
 
 const App = {
     init(){
+        // Init all modules
         cursorBox.init();
         worldMap.init();
+        makayMap.init();
+        textSlidesAll.init();
+        for(let i in framesAll){
+            framesAll[i].init();
+        }
+
+        // Intro timeline
 
         let tlIntroOut = new TimelineMax();
         tlIntroOut.pause();
@@ -29,11 +37,9 @@ const App = {
 
             textSlidesAll.slides['makay'].showIn('world-map');
         });
-        textSlidesAll.init();
-        for(let i in framesAll){
-            framesAll[i].init();
-        }
-        console.log(campsAll);
+
+
+        console.log(makayMap);
 
     }
 };

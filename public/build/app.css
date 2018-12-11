@@ -326,6 +326,14 @@ h1 {
   z-index: 2;
 }
 
+#frame_makay-map .frame_makay-map_container .makay-map_wrap #makaymap .camp {
+  fill: #FF6608;
+}
+
+#frame_makay-map .frame_makay-map_container .makay-map_wrap #makaymap .camp:hover {
+  cursor: pointer;
+}
+
 .text-slide {
   position: fixed;
   top: 0;
