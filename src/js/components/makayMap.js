@@ -1,6 +1,7 @@
 import {makayExpeditionsGraph, makayEspecesGraph, makayMenaceesGraph} from './makayGraphs';
 import TweenMax from "gsap/TweenMax";
 import TimelineMax from "gsap/TimelineMax";
+import {framesAll, textSlidesAll} from "./frames";
 
 const makayCamps = {
     'expeditions' : {
@@ -76,6 +77,14 @@ const makayMap = {
         this.campsObjects['expeditions'].g.classList.add('visited');
         this.campsObjects['expeditions'].circle.style.opacity = 1;
 
+        // Initialize the next button
+        document.querySelector('.makay-map_next-btn').addEventListener('click', (e)=>{
+            e.preventDefault();
+            textSlidesAll.slides['world'].showIn('world-map');
+            framesAll['makay-map'].showOut();
+
+        })
+
     },
     addCamp(camp){
         let newCamp = new Camp(camp.id, camp.title, camp.coords, camp.size, camp.desc, camp.img_url, camp.idNumber);
@@ -95,6 +104,9 @@ const makayMap = {
                     this.campsObjects[i].g.classList.add('unlocked');
                 }
             }
+        }
+        if(this.status >= 4){
+            document.querySelector('.makay-map_next-btn').classList.add('active');
         }
         console.log(this.status);
     }

@@ -36,7 +36,7 @@ const App = {
             //lance la timeline
             tlIntroOut.play();
 
-            textSlidesAll.slides['makay'].showIn('world-map');
+            textSlidesAll.slides['makay'].showIn('makay-map');
         });
 
 

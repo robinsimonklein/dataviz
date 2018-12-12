@@ -4,13 +4,19 @@ import {worldMap} from './worldMap';
 
 
 let textSlidesAll = {
-    // data: [{
-    //     id: 'makay',
-    //     title: 'Bienvenue au makay',
-    //     img_url: 'images/EWEXMKA0677.jpg',
-    //     content: 'Madagascar détient une biodiversité remarquable, parmis les plus endémiques de la planète.',
-    //     duration: '8'
-    // }],
+    data: [{
+        id: 'makay',
+        title: 'Bienvenue au makay',
+        img_url: 'images/EWEXMKA0677.jpg',
+        content: 'Madagascar détient une biodiversité remarquable, parmis les plus endémiques de la planète.',
+        duration: '8'
+    },{
+        id: 'world',
+        title: 'Les mondes perdus',
+        img_url: 'images/EWEXMKA0677.jpg',
+        content: 'Le makay n\'est pas le seul monde perdu sur Terre, il y en existe d\'autres que l\'on doit protéger,',
+        duration: '8'
+    }],
     slides: [],
 
 
@@ -110,13 +116,53 @@ const framesAll = [];
 
 // Define other frames
 
+/* Madagascar map */
+framesAll['mada-map'] = {
+    id: 'mada-map',
+    el: document.querySelector('#frame_maga-map'),
+
+    tlIn: new TimelineMax(),
+    tlOut: new TimelineMax(),
+    init(){
+        // this.tlIn.pause()
+        //     .from(this.el, 1, {autoAlpha: 0, ease: Power3.easeIn}, '#start')
+        //     .to(this.el.querySelector('.frame_content'), 1.5, {opacity: 1, ease: Power3.easeOut}, '#start+=0.1');
+        // this.tlOut.pause()
+        //     .from(this.el.querySelector('.frame_content'), 1.5, {opacity: 1, ease: Power3.easeOut}, '#start')
+        //     .to(this.el, 1, {autoAlpha: 0, ease: Power3.easeIn}, '#start+=1.5');
+    },
+    showIn(){
+        this.el.querySelector('.frame_bg_img').classList.add('zoomIn');
+        this.tlIn.play();
+    },
+    showOut(){
+        this.el.querySelector('.frame_bg_img').classList.add('zoomOut');
+        this.tlOut.play();
+    }
+
+};
 /* Makay map */
 framesAll['makay-map'] = {
     id: 'makay-map',
     el: document.querySelector('#frame_makay-map'),
 
+    tlIn: new TimelineMax(),
+    tlOut: new TimelineMax(),
     init(){
-
+        this.tlIn.pause()
+            .from(this.el, 1, {autoAlpha: 0, ease: Power3.easeIn}, '#start')
+            .to(this.el.querySelector('.frame_content'), 1.5, {opacity: 1, ease: Power3.easeOut}, '#start+=0.1');
+        this.tlOut.pause()
+            .from(this.el.querySelector('.frame_content'), 1.5, {opacity: 1, ease: Power3.easeOut}, '#start')
+            .to(this.el, 1, {autoAlpha: 0, ease: Power3.easeIn}, '#start+=1.5');
+    },
+    showIn(){
+        this.el.querySelector('.frame_bg_img').classList.add('zoomIn');
+        this.tlIn.play();
+    },
+    showOut(){
+        this.el.querySelector('.frame_bg_img').classList.add('zoomOut');
+        this.tlOut.play();
     }
 
 };
@@ -134,18 +180,19 @@ framesAll['world-map'] = {
         let count = 0;
         for(let i in worldMap.lostWorldsObjects){
             this.points[i] = worldMap.lostWorldsObjects[i].el;
-            this.tlIn.to(framesAll['world-map'].points[i], 5, {className:'+=visible', ease: Power3.easeOut}, 0.2*count+0.8);
+            this.tlIn.to(framesAll['world-map'].points[i], 5, {className:'+=visible', ease: Power3.easeOut}, '#start+='+0.2*count+1.8,);
             count+=1;
         }
+            this.tlIn.pause()
+                .to(this.el, 1, {autoAlpha: 1, ease: Power3.easeIn}, '#start')
+                .from(this.el.querySelector('.worldMap_container'), 1.5, {opacity: 0.8, scale: 0.2, ease: Power3.easeOut}, '#start+=0.1');
+
     },
     showIn(){
         this.tlIn.play();
     }
 };
 
-framesAll['world-map'].tlIn.pause()
-    .to(framesAll['world-map'].el, 1, {autoAlpha: 1, ease: Power3.easeIn}, '#start')
-    .from(framesAll['world-map'].el.querySelector('.worldMap_container'), 1.5, {opacity: 0.8, scale: 0.2, ease: Power3.easeOut}, '#start+=0.1');
 
 
 

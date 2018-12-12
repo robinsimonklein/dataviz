@@ -39,6 +39,12 @@
 
       backface-visibility: hidden;
 
+      &.zoomIn{
+        opacity: 1;
+        transform: scale3d(1.2,1.2,1.2);
+
+        transition: transform 6s $bezier_ease-out, opacity 1.3s $bezier_ease-in;
+      }
       &.zoomOut{
         transform: scale3d(1.2, 1.2, 1);
         opacity: 0;
@@ -136,7 +142,7 @@
       flex-direction: column;
       align-items: center;
       justify-content: center;
-      padding: 70px 0px 70px 20px;
+      padding: 70px 0px 40px 20px;
       position: relative;
 
       .makay-map_texture{
@@ -168,6 +174,30 @@
           color: $color_ui_4;
           font-size: 20px;
           margin-left: 10px;
+        }
+      }
+
+      .makay-map_next-btn_wrap{
+        display: block;
+        z-index:1;
+        .makay-map_next-btn{
+          color: $color_ui_4;
+          font-size: 18px;
+          padding: 10px;
+          text-transform: uppercase;
+          border: 2px solid $color_ui_4;
+          display:inline-block;
+          visibility: hidden;
+          opacity: 0;
+          &:hover{
+            cursor: pointer;
+          }
+
+          &.active{
+            visibility: visible;
+            opacity: 1;
+            transition: opacity 0.5s ease;
+          }
         }
       }
     }
@@ -211,6 +241,78 @@
           transition: opacity 0.3s $bezier_ease-in-out;
         }
         .makay-content_text{
+          opacity:1;
+          transition: opacity 0.3s $bezier_ease-in-out;
+        }
+      }
+    }
+  }
+}
+
+
+#frame_mada-map{
+  .frame_mada-map_container{
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    box-sizing: border-box;
+
+    display: flex;
+    flex-direction:row;
+    justify-content: space-between;
+    .mada-map_wrap{
+      width: 25%;
+      min-width: 200px;
+      display:flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 70px 0px 70px 10%;
+      position: relative;
+
+
+    }
+    .mada-content_wrap{
+      height: 100%;
+      width: 40%;
+      padding: 30px 10% 30px 0px;
+      display:flex;
+      flex-direction: column;
+      align-content: center;
+      max-height:100%;
+      overflow: auto;
+      .mada-content_header{
+        color: $color_ui_5;
+      }
+
+      .mada-content_title{
+        font-family: 'Lora', serif;
+        font-size: 80px;
+        line-height: 70px;
+        color: $color_ui_5;
+        font-weight: normal;
+        margin: 5% 0 0 0;
+      }
+      .mada-content_text{
+        font-size: 18px;
+        color: $color_ui_5;
+        max-width: 800px;
+      }
+
+      .mada-content_graph{
+        height: 300px;
+        padding-right: 30px;
+        margin-left:-20px;
+      }
+
+      &.visible{
+        .mada-content_title{
+          opacity:1;
+          transition: opacity 0.3s $bezier_ease-in-out;
+        }
+        .mada-content_text{
           opacity:1;
           transition: opacity 0.3s $bezier_ease-in-out;
         }

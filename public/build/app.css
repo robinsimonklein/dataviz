@@ -16,6 +16,23 @@
   }
 }
 
+@keyframes makay {
+  0% {
+    stroke-opacity: 1;
+    stroke-width: 0;
+  }
+
+  50% {
+    stroke-opacity: 0;
+    stroke-width: 40;
+  }
+
+  100% {
+    stroke-opacity: 0;
+    stroke-width: 40;
+  }
+}
+
 @keyframes pop {
   0% {
     transform: scale(0);
@@ -93,10 +110,6 @@ h1 {
   animation-timing-function: ease;
 }
 
-.worldMap_container .bubble#makay:hover {
-  cursor: pointer;
-}
-
 .worldMap_container .bubble.visible {
   transform: scale(1);
   transition: transform 5s cubic-bezier(0, 0, 0.3, 1);
@@ -115,6 +128,20 @@ h1 {
   stroke-width: 15;
   transform: scale(1.4);
   transition: all 0.3s ease;
+}
+
+.makay-in-mada {
+  transform: scale(0.35) translateX(110px) translateY(1170px);
+  fill: #FF6608;
+  stroke: #EBA116;
+  animation-name: makay;
+  animation-duration: 3s;
+  animation-iteration-count: infinite;
+  animation-timing-function: ease;
+}
+
+.makay-in-mada:hover {
+  cursor: pointer;
 }
 
 #makaymap {
@@ -345,6 +372,12 @@ h1 {
   backface-visibility: hidden;
 }
 
+.frame .frame_bg .frame_bg_img.zoomIn {
+  opacity: 1;
+  transform: scale3d(1.2, 1.2, 1.2);
+  transition: transform 6s cubic-bezier(0, 0, 0.3, 1), opacity 1.3s cubic-bezier(0.6, 0, 1, 1);
+}
+
 .frame .frame_bg .frame_bg_img.zoomOut {
   transform: scale3d(1.2, 1.2, 1);
   opacity: 0;
@@ -434,7 +467,7 @@ h1 {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  padding: 70px 0px 70px 20px;
+  padding: 70px 0px 40px 20px;
   position: relative;
 }
 
@@ -469,6 +502,32 @@ h1 {
   color: #FF6608;
   font-size: 20px;
   margin-left: 10px;
+}
+
+#frame_makay-map .frame_makay-map_container .makay-map_wrap .makay-map_next-btn_wrap {
+  display: block;
+  z-index: 1;
+}
+
+#frame_makay-map .frame_makay-map_container .makay-map_wrap .makay-map_next-btn_wrap .makay-map_next-btn {
+  color: #FF6608;
+  font-size: 18px;
+  padding: 10px;
+  text-transform: uppercase;
+  border: 2px solid #FF6608;
+  display: inline-block;
+  visibility: hidden;
+  opacity: 0;
+}
+
+#frame_makay-map .frame_makay-map_container .makay-map_wrap .makay-map_next-btn_wrap .makay-map_next-btn:hover {
+  cursor: pointer;
+}
+
+#frame_makay-map .frame_makay-map_container .makay-map_wrap .makay-map_next-btn_wrap .makay-map_next-btn.active {
+  visibility: visible;
+  opacity: 1;
+  transition: opacity 0.5s ease;
 }
 
 #frame_makay-map .frame_makay-map_container .makay-content_wrap {
@@ -514,6 +573,75 @@ h1 {
 }
 
 #frame_makay-map .frame_makay-map_container .makay-content_wrap.visible .makay-content_text {
+  opacity: 1;
+  transition: opacity 0.3s cubic-bezier(0.6, 0, 0.3, 1);
+}
+
+#frame_mada-map .frame_mada-map_container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+#frame_mada-map .frame_mada-map_container .mada-map_wrap {
+  width: 25%;
+  min-width: 200px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 70px 0px 70px 10%;
+  position: relative;
+}
+
+#frame_mada-map .frame_mada-map_container .mada-content_wrap {
+  height: 100%;
+  width: 40%;
+  padding: 30px 10% 30px 0px;
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  max-height: 100%;
+  overflow: auto;
+}
+
+#frame_mada-map .frame_mada-map_container .mada-content_wrap .mada-content_header {
+  color: #3F2920;
+}
+
+#frame_mada-map .frame_mada-map_container .mada-content_wrap .mada-content_title {
+  font-family: 'Lora', serif;
+  font-size: 80px;
+  line-height: 70px;
+  color: #3F2920;
+  font-weight: normal;
+  margin: 5% 0 0 0;
+}
+
+#frame_mada-map .frame_mada-map_container .mada-content_wrap .mada-content_text {
+  font-size: 18px;
+  color: #3F2920;
+  max-width: 800px;
+}
+
+#frame_mada-map .frame_mada-map_container .mada-content_wrap .mada-content_graph {
+  height: 300px;
+  padding-right: 30px;
+  margin-left: -20px;
+}
+
+#frame_mada-map .frame_mada-map_container .mada-content_wrap.visible .mada-content_title {
+  opacity: 1;
+  transition: opacity 0.3s cubic-bezier(0.6, 0, 0.3, 1);
+}
+
+#frame_mada-map .frame_mada-map_container .mada-content_wrap.visible .mada-content_text {
   opacity: 1;
   transition: opacity 0.3s cubic-bezier(0.6, 0, 0.3, 1);
 }

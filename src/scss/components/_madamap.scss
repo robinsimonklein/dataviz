@@ -1,0 +1,15 @@
+
+.makay-in-mada{
+  transform: scale(0.35) translateX(110px) translateY(1170px);
+  fill: $color_ui_4;
+  stroke: $color_ui_3;
+
+  animation-name: makay;
+  animation-duration: 3s;
+  animation-iteration-count: infinite;
+  animation-timing-function: ease;
+
+  &:hover{
+    cursor: pointer;
+  }
+}
