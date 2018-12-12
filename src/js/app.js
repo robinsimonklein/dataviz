@@ -1,4 +1,4 @@
-import d3 from './vendor/d3.v5.min';
+
 import TweenMax from "gsap/TweenMax";
 import TimelineMax from "gsap/TimelineMax";
 import {worldMap} from './components/worldMap';

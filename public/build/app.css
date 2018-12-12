@@ -119,7 +119,7 @@ h1 {
 
 #makaymap .camp.unlocked {
   opacity: 0.8;
-  transtition: opacity 0.5 ease;
+  transition: opacity 0.5 ease;
 }
 
 #makaymap .camp.visited {
@@ -140,8 +140,9 @@ h1 {
 }
 
 .makay-menacees_graph {
-  margin: 0 !important;
+  margin: 55px 0 0 0;
   padding-left: 55px;
+  padding-right: 0;
 }
 
 .makay-menacees_graph .makay-menacees_graph_dates ul {
@@ -443,11 +444,13 @@ h1 {
 
 #frame_makay-map .frame_makay-map_container .makay-content_wrap .makay-content_header {
   padding-left: 55px;
+  min-height: 300px;
 }
 
 #frame_makay-map .frame_makay-map_container .makay-content_wrap .makay-content_title {
   font-family: 'Lora', serif;
   font-size: 80px;
+  line-height: 70px;
   color: white;
   font-weight: normal;
   margin: 5% 0 0 0;
@@ -463,6 +466,16 @@ h1 {
   height: 300px;
   padding-right: 30px;
   margin-left: -20px;
+}
+
+#frame_makay-map .frame_makay-map_container .makay-content_wrap.visible .makay-content_title {
+  opacity: 1;
+  transition: opacity 0.3s cubic-bezier(0.6, 0, 0.3, 1);
+}
+
+#frame_makay-map .frame_makay-map_container .makay-content_wrap.visible .makay-content_text {
+  opacity: 1;
+  transition: opacity 0.3s cubic-bezier(0.6, 0, 0.3, 1);
 }
 
 .text-slide {
@@ -645,6 +658,10 @@ body {
   background: -webkit-radial-gradient(center, ellipse cover, #FFFDFD 0%, #f7e6d4 100%);
   background: radial-gradient(ellipse at center, #FFFDFD 0%, #f7e6d4 100%);
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#FFFDFD', endColorstr='#f7e6d4',GradientType=1 );
+}
+
+.black-bg {
+  background-color: black;
 }
 
 svg,

@@ -1,4 +1,6 @@
 import {makayExpeditionsGraph, makayEspecesGraph, makayMenaceesGraph} from './makayGraphs';
+import TweenMax from "gsap/TweenMax";
+import TimelineMax from "gsap/TimelineMax";
 
 const makayCamps = {
     'expeditions' : {
@@ -60,6 +62,11 @@ const makayMap = {
         makayExpeditionsGraph.init();
         makayEspecesGraph.init();
         makayMenaceesGraph.init();
+
+        // Show the first camp
+        this.campsObjects['expeditions'].updatePage();
+        document.querySelector('.makay-expeditions_graph').classList.add('active');
+        makayExpeditionsGraph.graph.flush();
     },
     addCamp(camp){
         let newCamp = new Camp(camp.id, camp.title, camp.coords, camp.size, camp.desc, camp.img_url);
@@ -119,13 +126,32 @@ class Camp{
 
         });
 
+        this.context =  document.querySelector('.makay-content_wrap');
+
 
     }
     updatePage(){
-        const context =  document.querySelector('.makay-content_wrap');
-        context.querySelector('.makay-content_header .makay-content_title').innerHTML = this.title;
-        context.querySelector('.makay-content_header .makay-content_text').innerHTML = this.desc;
-        document.querySelector('#frame_makay-map .frame_bg_img').setAttribute('src', this.img_url);
+
+        let hideAnimation = new TimelineMax();
+        let showAnimation = new TimelineMax().pause();
+        showAnimation.from(document.querySelector('.makay-content_title'), 2, {autoAlpha: 0, ease: Power3.easeOut}, 0)
+            .from(document.querySelector('.makay-content_text'), 2, {autoAlpha: 0, ease: Power3.easeOut}, 0.2)
+            .from(document.querySelector('#frame_makay-map .frame_bg_img'), 2, {autoAlpha: 0, ease: Power3.easeOut}, 0);
+
+        hideAnimation.to(document.querySelector('.makay-content_title'), 0.2, {autoAlpha: 0},0)
+        .to(document.querySelector('.makay-content_text'), 0.2, {autoAlpha: 0},0)
+        .to(document.querySelector('#frame_makay-map .frame_bg_img'), 0.2, {autoAlpha: 0},0)
+        .eventCallback('onComplete', ()=>{
+            // When text hidden
+            this.context.querySelector('.makay-content_header .makay-content_title').innerHTML = this.title;
+            this.context.querySelector('.makay-content_header .makay-content_title').visibility = 'hidden';
+            this.context.querySelector('.makay-content_header .makay-content_text').innerHTML = this.desc;
+            document.querySelector('#frame_makay-map .frame_bg_img').setAttribute('src', this.img_url);
+
+            showAnimation.play();
+        });
+        hideAnimation.play();
+
 
     }
 }

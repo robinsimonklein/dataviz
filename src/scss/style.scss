@@ -50,6 +50,9 @@ body{
   background: radial-gradient(ellipse at center, #FFFDFD 0%, #f7e6d4 100%);
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#FFFDFD', endColorstr='#f7e6d4',GradientType=1 );
 }
+.black-bg{
+  background-color: black;
+}
 
 svg, .svg-container{
   backface-visibility: hidden;

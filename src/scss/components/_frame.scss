@@ -169,11 +169,13 @@
       overflow: auto;
       .makay-content_header{
         padding-left: 55px;
+        min-height:300px;
       }
 
       .makay-content_title{
         font-family: 'Lora', serif;
         font-size: 80px;
+        line-height: 70px;
         color: white;
         font-weight: normal;
         margin: 5% 0 0 0;
@@ -188,6 +190,17 @@
         height: 300px;
         padding-right: 30px;
         margin-left:-20px;
+      }
+
+      &.visible{
+        .makay-content_title{
+          opacity:1;
+          transition: opacity 0.3s $bezier_ease-in-out;
+        }
+        .makay-content_text{
+          opacity:1;
+          transition: opacity 0.3s $bezier_ease-in-out;
+        }
       }
     }
   }
