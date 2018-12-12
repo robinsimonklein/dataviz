@@ -16,6 +16,16 @@
   }
 }
 
+@keyframes pop {
+  0% {
+    transform: scale(0);
+  }
+
+  100% {
+    transform: scale(1);
+  }
+}
+
 h1 {
   font-family: 'Lora', Serif;
 }
@@ -118,12 +128,16 @@ h1 {
 }
 
 #makaymap .camp.unlocked {
-  opacity: 0.8;
-  transition: opacity 0.5 ease;
+  opacity: 1;
+  transition: opacity 0.5s ease;
 }
 
 #makaymap .camp.visited {
-  opacity: 0.8;
+  opacity: 1;
+}
+
+#makaymap .camp.visited .camp-circle {
+  opacity: 1 !important;
 }
 
 #makaymap .camp:hover {
@@ -213,6 +227,18 @@ h1 {
   background-size: contain;
   background-position: center;
   background-repeat: no-repeat;
+  transform: scale(0);
+  transform-origin: center;
+  transition: transform 0.2s cubic-bezier(0.6, 0, 1, 1);
+  animation-name: pop;
+  animation-play-state: running;
+  animation-duration: 0.4s;
+  animation-timing-function: cubic-bezier(0.6, 0, 0.3, 1);
+}
+
+.makay-menacees_graph .makay-menacees_graph_chart .makay-content_graph_line .makay-content_graph_values .makay-content_graph_values-item.visible {
+  transform: scale(1);
+  transition: transform 0.2s cubic-bezier(0.6, 0, 1, 1);
 }
 
 #cursorBox {
@@ -429,6 +455,20 @@ h1 {
   top: 0;
   left: 100%;
   max-width: 200px;
+}
+
+#frame_makay-map .frame_makay-map_container .makay-map_wrap .makay-map_camps-counter {
+  position: absolute;
+  top: 30px;
+  left: 30px;
+  display: flex;
+  justify-items: center;
+}
+
+#frame_makay-map .frame_makay-map_container .makay-map_wrap .makay-map_camps-counter span {
+  color: #FF6608;
+  font-size: 20px;
+  margin-left: 10px;
 }
 
 #frame_makay-map .frame_makay-map_container .makay-content_wrap {

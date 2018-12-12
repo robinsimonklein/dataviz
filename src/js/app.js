@@ -40,7 +40,6 @@ const App = {
         });
 
 
-        console.log(makayMap);
 
     }
 };

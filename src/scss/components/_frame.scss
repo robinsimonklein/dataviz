@@ -157,6 +157,19 @@
           max-width:200px;
         }
       }
+      .makay-map_camps-counter{
+        position: absolute;
+        top: 30px;
+        left: 30px;
+        display: flex;
+        justify-items: center;
+
+        span{
+          color: $color_ui_4;
+          font-size: 20px;
+          margin-left: 10px;
+        }
+      }
     }
     .makay-content_wrap{
       height: 100%;

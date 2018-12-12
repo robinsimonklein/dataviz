@@ -12,7 +12,8 @@ const makayCamps = {
         },
         size: 1.1,
         desc: 'Depuis 2017, des expéditions ont menées afin de recenser les espèces du Makay',
-        img_url: 'images/backgrounds/camp_1_bg.jpg'
+        img_url: 'images/backgrounds/camp_1_bg.jpg',
+        idNumber: 1,
     },
     'especes' : {
         id: 'especes',
@@ -23,7 +24,8 @@ const makayCamps = {
         },
         size: 1.1,
         desc: '<br>',
-        img_url: 'images/backgrounds/camp_2_bg.jpg'
+        img_url: 'images/backgrounds/camp_2_bg.jpg',
+        idNumber: 2,
     },
     'endemicite' : {
         id: 'endemicite',
@@ -34,7 +36,8 @@ const makayCamps = {
         },
         size: 1.1,
         desc: '<br>',
-        img_url: 'images/backgrounds/camp_3_bg.jpg'
+        img_url: 'images/backgrounds/camp_3_bg.jpg',
+        idNumber: 3,
     },
     'menacees' : {
         id: 'menacees',
@@ -45,7 +48,8 @@ const makayCamps = {
         },
         size: 1.1,
         desc: '<br>',
-        img_url: 'images/backgrounds/camp_4_bg.jpg'
+        img_url: 'images/backgrounds/camp_4_bg.jpg',
+        idNumber: 4
     },
 };
 
@@ -53,6 +57,7 @@ const makayMap = {
     el: null,
     camps: makayCamps,
     campsObjects: [],
+    status: 1,
     init(){
         this.el = document.querySelector('#makaymap');
         for(let i in makayCamps){
@@ -67,18 +72,37 @@ const makayMap = {
         this.campsObjects['expeditions'].updatePage();
         document.querySelector('.makay-expeditions_graph').classList.add('active');
         makayExpeditionsGraph.graph.flush();
+        this.updateCamp(this.campsObjects['expeditions']);
+        this.campsObjects['expeditions'].g.classList.add('visited');
+        this.campsObjects['expeditions'].circle.style.opacity = 1;
+
     },
     addCamp(camp){
-        let newCamp = new Camp(camp.id, camp.title, camp.coords, camp.size, camp.desc, camp.img_url);
+        let newCamp = new Camp(camp.id, camp.title, camp.coords, camp.size, camp.desc, camp.img_url, camp.idNumber);
         newCamp.build();
         this.campsObjects[camp.id] = newCamp;
         this.el.append(newCamp.g);
     },
+    updateCamp(camp){
+        if(camp.idNumber >= this.status && camp.idNumber <= this.status+1){
+            this.status = camp.idNumber;
+
+            //update the corner counter
+            document.querySelector('.makay-map_camps-counter span').innerHTML = this.status+'/4';
+
+            for(let i in this.campsObjects){
+                if(this.campsObjects[i].idNumber <= this.status+1){
+                    this.campsObjects[i].g.classList.add('unlocked');
+                }
+            }
+        }
+        console.log(this.status);
+    }
 };
 
 class Camp{
 
-    constructor(id, title, coords, size, desc, img_url){
+    constructor(id, title, coords, size, desc, img_url, idNumber){
         this.g = null;
         this.el = null;
         this.id = id;
@@ -87,6 +111,9 @@ class Camp{
         this.size = size;
         this.desc = desc;
         this.img_url = img_url;
+        this.idNumber = idNumber;
+        this.unlocked = false;
+        this.visited = false;
     }
     build(){
         this.g = document.createElementNS('http://www.w3.org/2000/svg', 'g');
@@ -107,22 +134,32 @@ class Camp{
         this.circle.setAttribute('height', 250);
         this.circle.setAttribute('class', 'camp-cirle');
         this.circle.setAttribute('fill', 'url(#camppattern)');
-        this.circle.setAttribute('style', 'transform: scale(1.2) translate(-25px,-18px)');
+        this.circle.setAttribute('style', 'transform: scale(1.2) translate(-25px,-18px); opacity: 0');
         this.g.append(this.circle);
 
         // On click on a camp
         this.g.addEventListener('click', (e)=>{
             e.preventDefault();
-            this.updatePage();
 
-            // change the graph values and parameters by passing the camp id
-            let graphsHTML = document.querySelectorAll('.makay-content_graph');
-            for (let i = 0; i<graphsHTML.length; i++){
-                graphsHTML[i].classList.remove('active');
+            if(this.idNumber <= makayMap.status+1) { // Seulement si le camp est débloqué
+
+
+                this.updatePage();
+
+                // change the graph values and parameters by passing the camp id
+                let graphsHTML = document.querySelectorAll('.makay-content_graph');
+                for (let i = 0; i<graphsHTML.length; i++){
+                    graphsHTML[i].classList.remove('active');
+                }
+                document.querySelector('.makay-'+this.id+'_graph').classList.add('active');
+                makayExpeditionsGraph.graph.flush();
+                makayEspecesGraph.changeGraph(this.id);
+
+                // Met à our la carte des campements
+                this.g.classList.add('visited');
+                this.circle.style.opacity = 1;
+                makayMap.updateCamp(this);
             }
-            document.querySelector('.makay-'+this.id+'_graph').classList.add('active');
-            makayExpeditionsGraph.graph.flush();
-            makayEspecesGraph.changeGraph(this.id);
 
         });
 

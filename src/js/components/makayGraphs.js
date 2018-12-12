@@ -333,7 +333,6 @@ const makayMenaceesGraph = {
 
 
             if(yearCount===0){
-                console.log(this.data[year].values);
 
                 for(let category in this.data[year].values){
                     let chartLine = document.createElement('div');
@@ -346,6 +345,7 @@ const makayMenaceesGraph = {
                         let item = document.createElement('span');
                         item.classList.add('makay-content_graph_values-item');
                         chartLine.querySelector('.makay-content_graph_values').append(item);
+                        item.classList.add('visible');
                     }
 
                     this.el.querySelector('.makay-menacees_graph_chart').append(chartLine);
@@ -368,7 +368,6 @@ const makayMenaceesGraph = {
         });
     },
     update(year){
-        console.log(this.data[year]);
         for(let category in this.data[year].values){
             let chartLine = this.el.querySelector('#graph_line_'+category);
             let chartLineItems = chartLine.querySelectorAll('.makay-content_graph_values-item')
@@ -379,15 +378,25 @@ const makayMenaceesGraph = {
                     let item = document.createElement('span');
                     item.classList.add('makay-content_graph_values-item');
                     chartLine.querySelector('.makay-content_graph_values').append(item);
+                    item.classList.add('visible');
+
                 }
 
             }else{
                 for(let i=0; i<chartLineItems.length ;i++){
                     if(this.data[year].values[category] <= 0){
-                        chartLineItems[i].remove();
+
+                        chartLineItems[i].classList.remove('visible');
+                        setTimeout(()=>{
+                            chartLineItems[i].remove();
+                        }, 200);
                     }
-                    else if(this.data[year].values[category] < i){
-                        chartLineItems[i].remove();
+                    else if(this.data[year].values[category] <= i){
+                        chartLineItems[i].classList.remove('visible');
+                        setTimeout(()=>{
+                            chartLineItems[i].remove();
+                        }, 200);
+
                     }
                 }
             }
