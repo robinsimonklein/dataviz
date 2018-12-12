@@ -9,14 +9,14 @@ const cursorBox = {
     init(){
         this.el = document.querySelector('#cursorBox');
     },
-    show(title, desc, note){
+    show(title, desc, land){
         this.el.classList.add('visible');
         this.el.querySelector('.title').innerHTML = title;
         this.el.querySelector('.desc').innerHTML = desc;
-        if(note){
-            this.el.querySelector('.note').innerHTML = note;
+        if(land){
+            this.el.querySelector('.land').innerHTML = land;
         }else{
-            this.el.querySelector('.note').innerHTML = '';
+            this.el.querySelector('.land').innerHTML = '';
         }
     },
     hide(){

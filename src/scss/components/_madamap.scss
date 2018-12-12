@@ -2,7 +2,7 @@
 .makay-in-mada{
   transform: scale(0.35) translateX(110px) translateY(1170px);
   fill: $color_ui_4;
-  stroke: $color_ui_3;
+  stroke: $color_ui_4;
 
   animation-name: makay;
   animation-duration: 3s;
@@ -12,4 +12,15 @@
   &:hover{
     cursor: pointer;
   }
+}
+
+#mada-endemicite_graph{
+  height: 300px;
+}
+
+.c3-chart-arcs-background{
+  fill: rgba($color_ui_2, 0.2);
+}
+.c3-gauge-value{
+  font-weight: bold;
 }

@@ -3,6 +3,7 @@ import TweenMax from "gsap/TweenMax";
 import TimelineMax from "gsap/TimelineMax";
 import {worldMap} from './components/worldMap';
 import {makayMap} from "./components/makayMap";
+import {madaMap} from "./components/madaMap";
 import cursorBox from './components/cursorBox';
 import {textSlidesAll, framesAll} from './components/frames';
 
@@ -13,6 +14,7 @@ const App = {
         cursorBox.init();
         worldMap.init();
         makayMap.init();
+        madaMap.init();
         textSlidesAll.init();
         for(let i in framesAll){
             framesAll[i].init();

@@ -1,4 +1,4 @@
-@import url(https://fonts.googleapis.com/css?family=Lato:400,700,900|Lora:400,700);
+@import url(https://fonts.googleapis.com/css?family=Lora:400,700);
 @keyframes animatedBubble {
   0% {
     stroke-opacity: 1;
@@ -24,12 +24,12 @@
 
   50% {
     stroke-opacity: 0;
-    stroke-width: 40;
+    stroke-width: 100;
   }
 
   100% {
     stroke-opacity: 0;
-    stroke-width: 40;
+    stroke-width: 100;
   }
 }
 
@@ -133,7 +133,7 @@ h1 {
 .makay-in-mada {
   transform: scale(0.35) translateX(110px) translateY(1170px);
   fill: #FF6608;
-  stroke: #EBA116;
+  stroke: #FF6608;
   animation-name: makay;
   animation-duration: 3s;
   animation-iteration-count: infinite;
@@ -142,6 +142,18 @@ h1 {
 
 .makay-in-mada:hover {
   cursor: pointer;
+}
+
+#mada-endemicite_graph {
+  height: 300px;
+}
+
+.c3-chart-arcs-background {
+  fill: rgba(113, 175, 39, 0.2);
+}
+
+.c3-gauge-value {
+  font-weight: bold;
 }
 
 #makaymap {
@@ -275,7 +287,7 @@ h1 {
   transform: scale(0.8);
   padding: 20px 25px;
   z-index: 900;
-  max-width: 250px;
+  max-width: 270px;
   transition: visibility 0s 0s, transform 0.3s ease;
 }
 
