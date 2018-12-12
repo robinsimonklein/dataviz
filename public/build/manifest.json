@@ -4,5 +4,6 @@
   "build/app.js": "/build/app.js",
   "build/runtime.js": "/build/runtime.js",
   "build/images/fond_2.jpg": "/build/images/fond_2.jpg",
-  "build/images/text-slide_2_color_1.png": "/build/images/text-slide_2_color_1.png"
+  "build/images/text-slide_2_color_1.png": "/build/images/text-slide_2_color_1.png",
+  "build/images/graph-item.png": "/build/images/graph-item.png"
 }

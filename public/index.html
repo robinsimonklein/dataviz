@@ -50,7 +50,7 @@
 
     <section class="frame gradient-bg" id="frame_makay-map">
         <div class="frame_bg">
-            <img class="frame_bg_img" src="images/backgrounds/camp_1_bg.jpg"/>
+            <img class="frame_bg_img" src=""/>
         </div>
         <div class="frame_content">
             <div class="filter filter-2"></div>
@@ -62,6 +62,10 @@
                     <svg version="1.1" id="makaymap" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 233 461.7" xml:space="preserve" preserveAspectRatio="xMinYMin meet">
                          <defs>
                             <pattern id="makaypattern" x="0" y="0" width="1" height="1">
+                                <image width="330" height="654"
+                                       xlink:href="images/textures/makay-map_texture.png"/>
+                            </pattern>
+                            <pattern id="camppattern" x="0" y="0" width="1" height="1">
                                 <image width="330" height="654"
                                        xlink:href="images/textures/makay-map_texture.png"/>
                             </pattern>
@@ -95,8 +99,25 @@
                         <h2 class="makay-content_title"></h2>
                         <p class="makay-content_text"></p>
                     </div>
-                    <div class="makay-content_graph" id="makay-content_graph">
+                    <div class="makay-content_graph makay-expeditions_graph" id="makay-expeditions_graph" height="300">
 
+                    </div>
+                    <div class="makay-content_graph makay-especes_graph makay-endemicite_graph" id="makay-especes_graph">
+
+                    </div>
+                    <div class="makay-content_graph makay-menacees_graph" id="makay-menacees_graph">
+                        <div class="makay-menacees_graph_dates">
+                            <ul>
+                            </ul>
+                        </div>
+                        <div class="makay-menacees_graph_chart">
+                            <div class="makay-content_graph_line makay-content_graph_line_template template">
+                                <div class="makay-content_graph_y">NC</div>
+                                <div class="makay-content_graph_values">
+                                </div>
+                            </div>
+
+                        </div>
                     </div>
                 </div>
             </div>

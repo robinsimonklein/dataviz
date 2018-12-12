@@ -114,10 +114,104 @@ h1 {
 
 #makaymap .camp {
   fill: #FF6608;
+  opacity: 0.3;
+}
+
+#makaymap .camp.unlocked {
+  opacity: 0.8;
+  transtition: opacity 0.5 ease;
+}
+
+#makaymap .camp.visited {
+  opacity: 0.8;
 }
 
 #makaymap .camp:hover {
   cursor: pointer;
+}
+
+.makay-content_graph {
+  display: none;
+  margin-top: 50px;
+}
+
+.makay-content_graph.active {
+  display: block;
+}
+
+.makay-menacees_graph {
+  margin: 0 !important;
+  padding-left: 55px;
+}
+
+.makay-menacees_graph .makay-menacees_graph_dates ul {
+  padding: 0;
+  margin: 0;
+  list-style-type: none;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.makay-menacees_graph .makay-menacees_graph_dates ul .dates-item {
+  color: white;
+  font-size: 20px;
+  padding: 2px 9px;
+  border: transparent solid 2px;
+  border-radius: 10px;
+  opacity: 0.5;
+  font-weight: bold;
+}
+
+.makay-menacees_graph .makay-menacees_graph_dates ul .dates-item.active {
+  opacity: 1;
+  border: white solid 2px;
+  transition: all 0.5s ease;
+}
+
+.makay-menacees_graph .makay-menacees_graph_dates ul .dates-item:hover {
+  opacity: 1;
+  border: white solid 2px;
+  transition: all 0.5s ease;
+  cursor: pointer;
+}
+
+.makay-menacees_graph .makay-menacees_graph_chart {
+  margin-top: 10px;
+}
+
+.makay-menacees_graph .makay-menacees_graph_chart .makay-content_graph_line {
+  display: flex;
+  align-items: center;
+  margin-top: 20px;
+}
+
+.makay-menacees_graph .makay-menacees_graph_chart .makay-content_graph_line .makay-content_graph_y {
+  color: white;
+  width: 50px;
+}
+
+.makay-menacees_graph .makay-menacees_graph_chart .makay-content_graph_line .makay-content_graph_values {
+  flex: 1;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+.makay-menacees_graph .makay-menacees_graph_chart .makay-content_graph_line .makay-content_graph_values:hover {
+  background-color: rgba(255, 102, 8, 0.1);
+  transition: background-color 0.3s ease;
+}
+
+.makay-menacees_graph .makay-menacees_graph_chart .makay-content_graph_line .makay-content_graph_values .makay-content_graph_values-item {
+  height: 20px;
+  width: 20px;
+  margin: 1px;
+  display: inline-block;
+  background-image: url(/build/images/graph-item.png);
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
 }
 
 #cursorBox {
@@ -313,7 +407,7 @@ h1 {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  padding: 50px 0px 50px 20px;
+  padding: 70px 0px 70px 20px;
   position: relative;
 }
 
@@ -338,13 +432,17 @@ h1 {
 
 #frame_makay-map .frame_makay-map_container .makay-content_wrap {
   height: 100%;
-  width: 50%;
-  padding: 30px 50px 30px 0px;
+  width: 40%;
+  padding: 30px 10% 30px 0px;
   display: flex;
   flex-direction: column;
   align-content: center;
   max-height: 100%;
   overflow: auto;
+}
+
+#frame_makay-map .frame_makay-map_container .makay-content_wrap .makay-content_header {
+  padding-left: 55px;
 }
 
 #frame_makay-map .frame_makay-map_container .makay-content_wrap .makay-content_title {
@@ -356,9 +454,15 @@ h1 {
 }
 
 #frame_makay-map .frame_makay-map_container .makay-content_wrap .makay-content_text {
-  font-size: 28px;
+  font-size: 22px;
   color: white;
-  max-width: 600px;
+  max-width: 800px;
+}
+
+#frame_makay-map .frame_makay-map_container .makay-content_wrap .makay-content_graph {
+  height: 300px;
+  padding-right: 30px;
+  margin-left: -20px;
 }
 
 .text-slide {
@@ -467,6 +571,61 @@ h1 {
   left: 0;
 }
 
+.c3 {
+  font-family: 'Lora', serif;
+  color: white;
+}
+
+.c3 .tick {
+  fill: white;
+}
+
+.c3 g.tick:after {
+  content: '';
+  height: 20px;
+  width: 20px;
+  background: red;
+  position: absolute;
+}
+
+.c3 g.tick .tick-picto {
+  transform: scale(0.11) translateX(-443px) translateY(60px);
+  fill: white;
+}
+
+.c3 .domain {
+  display: none;
+}
+
+.c3 .c3-text {
+  fill: white !important;
+}
+
+.c3 .c3-ygrid {
+  stroke: rgba(255, 255, 255, 0.2);
+}
+
+.c3 .c3-line-nb_especes {
+  stroke: white !important;
+  stroke-width: 3px !important;
+}
+
+.c3 .c3-circle {
+  fill: white !important;
+}
+
+.c3-tooltip-container {
+  background: white;
+  padding: 10px;
+  color: #3F2920;
+  border: none;
+}
+
+g.c3-texts.c3-texts-endemiques {
+  transform: translateX(-42px) !important;
+  font-weight: bold !important;
+}
+
 body {
   margin: 0;
   height: 100vh;
@@ -478,7 +637,7 @@ body {
 }
 
 .template {
-  display: none;
+  display: none !important;
 }
 
 .gradient-bg {

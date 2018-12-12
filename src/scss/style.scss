@@ -15,6 +15,7 @@
 @import "components/_makaymap";
 @import "components/_cursorBox";
 @import "components/_frame";
+@import "components/_charts";
 
 
 
@@ -40,7 +41,7 @@ body{
 }
 
 .template{
-  display: none;
+  display: none!important;
 }
 .gradient-bg{
 
