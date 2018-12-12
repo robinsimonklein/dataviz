@@ -5,17 +5,23 @@ import {worldMap} from './worldMap';
 
 let textSlidesAll = {
     data: [{
-        id: 'makay',
-        title: 'Bienvenue au makay',
+        id: 'mada',
+        title: 'Bienvenue à Madagascar',
         img_url: 'images/EWEXMKA0677.jpg',
-        content: 'Madagascar détient une biodiversité remarquable, parmis les plus endémiques de la planète.',
-        duration: '8'
+        content: "Un monde perdu... Une terre difficile d'accès, inhospitalière et quasi inexplorée. Un écosystème spectaculaire, et un sanctuaire de la biodiversité. Bienvenue dans le massif du Makay ! ",
+        duration: '13'
     },{
         id: 'world',
         title: 'Les mondes perdus',
         img_url: 'images/EWEXMKA0677.jpg',
-        content: 'Le makay n\'est pas le seul monde perdu sur Terre, il y en existe d\'autres que l\'on doit protéger,',
+        content: "Le Makay n'est pas le seul monde perdu sur Terre. Il est  urgent de préserver ces écosystèmes pour les connaissances qu'ils abritent.",
         duration: '8'
+    },{
+        id: 'makay',
+        title: 'Massif du Makay',
+        img_url: 'images/EWEXMKA0677.jpg',
+        content: "Explorez les différents campements établis dans le massif, et apprenez-en plus sur la situation de son écosystème actuel.",
+        duration: '10'
     }],
     slides: [],
 
@@ -119,24 +125,23 @@ const framesAll = [];
 /* Madagascar map */
 framesAll['mada-map'] = {
     id: 'mada-map',
-    el: document.querySelector('#frame_maga-map'),
+    el: document.querySelector('#frame_mada-map'),
 
     tlIn: new TimelineMax(),
     tlOut: new TimelineMax(),
     init(){
-        // this.tlIn.pause()
-        //     .from(this.el, 1, {autoAlpha: 0, ease: Power3.easeIn}, '#start')
-        //     .to(this.el.querySelector('.frame_content'), 1.5, {opacity: 1, ease: Power3.easeOut}, '#start+=0.1');
-        // this.tlOut.pause()
-        //     .from(this.el.querySelector('.frame_content'), 1.5, {opacity: 1, ease: Power3.easeOut}, '#start')
-        //     .to(this.el, 1, {autoAlpha: 0, ease: Power3.easeIn}, '#start+=1.5');
+
+        this.tlIn.pause()
+            .from(this.el, 1, {autoAlpha: 0, ease: Power3.easeIn}, '#start')
+            .to(this.el.querySelector('.frame_content'), 1.5, {opacity: 1, ease: Power3.easeOut}, '#start+=0.1');
+        this.tlOut.pause()
+            .from(this.el.querySelector('.frame_content'), 1.5, {opacity: 1, ease: Power3.easeOut}, '#start')
+            .to(this.el, 1, {autoAlpha: 0, ease: Power3.easeIn}, '#start+=1.5');
     },
     showIn(){
-        this.el.querySelector('.frame_bg_img').classList.add('zoomIn');
         this.tlIn.play();
     },
     showOut(){
-        this.el.querySelector('.frame_bg_img').classList.add('zoomOut');
         this.tlOut.play();
     }
 

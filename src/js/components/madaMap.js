@@ -1,5 +1,6 @@
 import cursorBox from './cursorBox';
 import {endemiciteMadaGraph} from './madaGraphs';
+import {framesAll, textSlidesAll} from "./frames";
 const madaMap = {
     el: null,
     next: null,
@@ -7,7 +8,9 @@ const madaMap = {
         this.el = document.querySelector('#frame_mada-map');
         this.next = this.el.querySelector('.makay-in-mada');
         this.next.addEventListener('click', ()=>{
-            console.log('makay');
+
+            textSlidesAll.slides['makay'].showIn('makay-map');
+            framesAll['mada-map'].showOut();
         });
 
 
