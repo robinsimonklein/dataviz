@@ -1,30 +1,24 @@
 # Makay
 
-Partez à la découverte de l'un des mondes perdus que comporte encore notre planète : le Makay.
+Partez à la découverte de l'un des mondes perdus que comporte encore notre planète : le Makay. Découvrez la richesse de son écosystème grâce à de la  datavisualisation.
+
+Projet étudiant - Réalisé par Robin Simonklein & Florian Weidmann
+
+## Sources
 
 ## Installation
 
-First, clone the repository
+Pour commencer, clonez le répertoire
 ```
 git clone https://github.com/robinsimonklein/dataviz.git
 ```
 
-Then, install dependencies
+Ensuite, installer les dépendances
 ```
 npm install
 ```
 
-## Usage
-There's two empty entry files provided in this project :
-- **src/js/main.js**
-- **src/scss/style.scss**
-
-That's the files you should modify and write your code in.
-You should, while working, run the command Encore Watch (see below) to compile assets.
-
-The **index.html** is in the **public** folder and that's the one you should modify (import for the compiled js and css files are already in).
-
-## Run
+## Lancer le projet
 ### Encore
 #### Watch (dev)
 ```
@@ -41,4 +35,4 @@ npm run encore.prod
 npm run serve
 ```
 
-Now, your project is accessible at http://127.0.0.1:8088 !
+Via http-server, le projet est visible à l'adresse : http://127.0.0.1:8088.
