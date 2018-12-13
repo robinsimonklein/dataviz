@@ -4,6 +4,8 @@ Partez à la découverte de l'un des mondes perdus que comporte encore notre pla
 
 Projet étudiant - Réalisé par Robin Simonklein & Florian Weidmann
 
+Voir le site : [Makay](https://robinsimonklein.com/makay)
+
 ## Sources
 
 [TEDxConcorde - La protection de la biodiversité, une question de survie](https://vimeo.com/38194065)
