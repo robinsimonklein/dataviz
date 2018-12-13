@@ -6,7 +6,7 @@ Partez à la découverte de l'un des mondes perdus que comporte encore notre pla
 
 First, clone the repository
 ```
-git clone https://github.com/Hugotgot/sample-project.git
+git clone https://github.com/robinsimonklein/dataviz.git
 ```
 
 Then, install dependencies
