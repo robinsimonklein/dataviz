@@ -1,6 +1,6 @@
-# sample-project
+# Makay
 
-A sample web project with webpack-encore and http-server
+Partez à la découverte de l'un des mondes perdus que comporte encore notre planète : le Makay.
 
 ## Installation
 
