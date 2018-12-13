@@ -6,6 +6,8 @@ Projet étudiant - Réalisé par Robin Simonklein & Florian Weidmann
 
 ## Sources
 
+[I'm an inline-style link](https://www.google.com)
+
 ## Installation
 
 Pour commencer, clonez le répertoire
