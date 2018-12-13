@@ -9,48 +9,96 @@ const lostworlds = {
             cy: 518
         },
         size: 20,
-        desc: 'Massif composé des produits de l’érosion d’immenses massifs de roches cristallines disparus il y a déjà plusieurs centaines de millions d’années, le Makay est l’une des œuvres de la nature les plus monumentales qui soit.',
-        note: 'Cliquez sur <strong>Makay</strong> pour explorer'
+        desc: '',
+        note: ''
     },
-    'groenland' : {
-        id: 'groenland',
-        name: 'Groenland',
+    'scoresby' : {
+        id: 'scoresby',
+        name: 'Scoresby Sund',
         coords: {
             cx: 410,
             cy: 170
         },
-        size: 30,
-        desc: 'Groenland'
+        size: 20,
+        desc: '',
+        land: 'Groenland'
     },
-    'desert_sahara' : {
-        id: 'desert_sahara',
-        name: 'Désert du Sahara',
+    'chiribequete' : {
+        id: 'chiribequete',
+        name: 'Chiribequete',
         coords: {
-            cx: 510,
-            cy: 420
-        },
-        size: 40,
-        desc: 'Désert du Sahara en Afrique'
-    },
-    'amazonie' : {
-        id: 'amazonie',
-        name: 'Amazonie',
-        coords: {
-            cx: 310,
-            cy: 500
-        },
-        size: 40,
-        desc: 'Amazonie'
-    },
-    'indonesie' : {
-        id: 'indonesie',
-        name: 'Massif de Matarombeo',
-        coords: {
-            cx: 810,
-            cy: 460
+            cx: 270,
+            cy: 470
         },
         size: 20,
-        desc: 'Le massif de Matarombeo en Indonésie'
+        desc: '',
+        land: 'Colombie'
+    },
+    'ituri' : {
+        id: 'ituri',
+        name: 'Ituri',
+        coords: {
+            cx: 540,
+            cy: 475
+        },
+        size: 20,
+        desc: '',
+        land: 'RDC'
+    },
+    'hkakabo_razi' : {
+        id: 'hkakabo_razi',
+        name: 'Hkakabo Razi',
+        coords: {
+            cx: 740,
+            cy: 392
+        },
+        size: 20,
+        desc: '',
+        land: 'Birmanie'
+    },
+    'konawe' : {
+        id: 'konawe',
+        name: 'Konawe',
+        coords: {
+            cx: 820,
+            cy: 470
+        },
+        size: 10,
+        desc: '',
+        land: 'Indonésie'
+    },
+    'murung_raya' : {
+        id: 'murung_raya',
+        name: 'Murung Raya',
+        coords: {
+            cx: 780,
+            cy: 470
+        },
+        size: 10,
+        desc: '',
+        land: 'Indonésie'
+    },
+    'nakanai' : {
+        id: 'nakanai',
+        name: 'Nakanai',
+        coords: {
+            cx: 900,
+            cy: 483
+        },
+        size: 20,
+        desc: '',
+        land: 'Papouasie'
+    },
+    'cape_melville' : {
+        id: 'cape_melville',
+        name: 'Cape Melville',
+        coords: {
+            cx: 880,
+            cy: 518
+        },
+        size: 20,
+        desc: '',
+        land: 'Australie'
     },
 };
 

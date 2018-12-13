@@ -7,19 +7,19 @@ let textSlidesAll = {
     data: [{
         id: 'mada',
         title: 'Bienvenue à Madagascar',
-        img_url: 'images/EWEXMKA0677.jpg',
+        img_url: 'images/backgrounds/text-slide_bg_1.jpg',
         content: "Un monde perdu... Une terre difficile d'accès, inhospitalière et quasi inexplorée. Un écosystème spectaculaire, et un sanctuaire de la biodiversité. Bienvenue dans le massif du Makay ! ",
         duration: '13'
     },{
         id: 'world',
         title: 'Les mondes perdus',
-        img_url: 'images/EWEXMKA0677.jpg',
+        img_url: 'images/backgrounds/text-slide_bg_1.jpg',
         content: "Le Makay n'est pas le seul monde perdu sur Terre. Il est  urgent de préserver ces écosystèmes pour les connaissances qu'ils abritent.",
         duration: '8'
     },{
         id: 'makay',
         title: 'Massif du Makay',
-        img_url: 'images/EWEXMKA0677.jpg',
+        img_url: 'images/backgrounds/text-slide_bg_1.jpg',
         content: "Explorez les différents campements établis dans le massif, et apprenez-en plus sur la situation de son écosystème actuel.",
         duration: '10'
     }],

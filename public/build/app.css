@@ -560,7 +560,7 @@ h1 {
 
 #frame_makay-map .frame_makay-map_container .makay-content_wrap .makay-content_title {
   font-family: 'Lora', serif;
-  font-size: 80px;
+  font-size: 60px;
   line-height: 70px;
   color: white;
   font-weight: normal;
@@ -847,4 +847,73 @@ body {
 svg,
 .svg-container {
   backface-visibility: hidden;
+}
+
+footer {
+  text-align: right;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  z-index: 900;
+}
+
+footer a {
+  padding: 10px;
+  background-color: white;
+  color: #3F2920;
+  text-decoration: none;
+  text-transform: uppercase;
+  font-weight: bold;
+  display: inline-block;
+}
+
+#infos {
+  z-index: 999;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  padding: 30px;
+  box-sizing: border-box;
+  transform: translateX(-50%) translateY(-50%);
+  background-color: white;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.05);
+  width: 50%;
+  display: none;
+}
+
+#infos:target {
+  display: block;
+}
+
+#infos h2 {
+  text-align: center;
+}
+
+#infos a {
+  color: #71AF27;
+}
+
+#infos hr {
+  width: 50px;
+  margin-left: 0;
+  border: none;
+  height: 1px;
+  background-color: #444;
+}
+
+#infos .close {
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  color: #FF6608;
+  font-weight: bold;
+  border: 1px solid #FF6608;
+  padding: 5px;
+  text-decoration: none;
+}
+
+#infos img {
+  display: inline-block;
+  margin: 0 20px;
 }

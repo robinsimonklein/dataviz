@@ -6,49 +6,49 @@ import {framesAll, textSlidesAll} from "./frames";
 const makayCamps = {
     'expeditions' : {
         id: 'expeditions',
-        title: 'Découvertes',
+        title: 'De nouvelles  espèces découvertes à chaque expédition',
         coords: {
             x: 1720,
             y: 600
         },
         size: 1.1,
-        desc: 'Depuis 2017, des expéditions ont menées afin de recenser les espèces du Makay',
+        desc: '',
         img_url: 'images/backgrounds/camp_1_bg.jpg',
         idNumber: 1,
     },
     'especes' : {
         id: 'especes',
-        title: 'Les espèces',
+        title: 'Une biodiversité extraordinaire',
         coords: {
             x: 1100,
             y: 1300
         },
         size: 1.1,
-        desc: '<br>',
+        desc: '',
         img_url: 'images/backgrounds/camp_2_bg.jpg',
         idNumber: 2,
     },
     'endemicite' : {
         id: 'endemicite',
-        title:'L\'endémicité',
+        title:'Une endémicité remarquable',
         coords: {
             x: 1400,
             y: 2100
         },
         size: 1.1,
-        desc: '<br>',
+        desc: '',
         img_url: 'images/backgrounds/camp_3_bg.jpg',
         idNumber: 3,
     },
     'menacees' : {
         id: 'menacees',
-        title: 'Espèces menacées',
+        title: 'Le nombre d\'espèces menacées déjà conséquent' ,
         coords: {
             x: 600,
             y: 2900
         },
         size: 1.1,
-        desc: '<br>',
+        desc: '',
         img_url: 'images/backgrounds/camp_4_bg.jpg',
         idNumber: 4
     },
