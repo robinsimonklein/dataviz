@@ -4,7 +4,7 @@ Partez à la découverte de l'un des mondes perdus que comporte encore notre pla
 
 Projet étudiant - Réalisé par Robin Simonklein & Florian Weidmann
 
-Voir le site : [Makay](https://robinsimonklein.com/makay)
+Voir le site : [Makay](https://makay.robinsimonklein.com)
 
 ## Sources
 
